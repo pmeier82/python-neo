@@ -347,9 +347,9 @@ class XpdIO(BaseIO):
                 sr = 32.0
             tet_data_raw = self._get_channels(tet_cs, kind='a')
             tet_data = AnalogSignalArray(
-                signal=tet_data_raw / 32.0,
+                signal=tet_data_raw,
                 sampling_rate=sr * pq.kHz,
-                units='ms')
+                units='uV')
             tet.analogsignalarrays.append(tet_data)
 
         # return

@@ -3,13 +3,12 @@
 from setuptools import setup
 import os
 
-version = open('./neo/version.py', 'r').read().split('\'')[1]
 long_description = open("README.txt").read()
 
 setup(
     name = "neo",
-    version = version,
-    packages = ['neo', 'neo.core', 'neo.io', 'neo.test', 'neo.test.io'],
+    version = '0.2.1dev',
+    packages = ['neo', 'neo.core', 'neo.io', 'neo.test', 'neo.test.iotest'],
     install_requires=[
                     'numpy>=1.3.0',
                     'quantities>=0.9.0',

@@ -179,15 +179,17 @@ except ImportError:
     warnings.warn("AlphaOmegaIO not available, check dependencies", ImportWarning)
 
 
+from .pickleio import PickleIO # should be always available, so no need for try...except
+iolist.append( PickleIO )
+
 try:
     from .brainvisionio import BrainVisionIO
     iolist.append( BrainVisionIO )
 except ImportError:
     warnings.warn("BrainVisionIO not available, check dependencies", ImportWarning)
 
-
 try:
-    from .xpdio import XpdIO
-    iolist.append(XpdIO)
+    from .elphyio import ElphyIO
+    iolist.append( ElphyIO )
 except ImportError:
-    warnings.warn("XpdIO not available, check dependencies", ImportWarning)
+    warnings.warn("ElphyIO not available, check dependencies", ImportWarning)
